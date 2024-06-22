@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Start.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Start.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.*;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.*;</span>
+
+<span class="s0">public class </span><span class="s1">Start </span><span class="s2">{</span>
+    <span class="s0">static class </span><span class="s1">Point </span><span class="s2">{</span>
+        <span class="s0">long </span><span class="s1">x</span><span class="s2">, </span><span class="s1">y</span><span class="s2">;</span>
+
+        <span class="s1">Point</span><span class="s2">(</span><span class="s0">long </span><span class="s1">x</span><span class="s2">, </span><span class="s0">long </span><span class="s1">y</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">x </span><span class="s2">= </span><span class="s1">x</span><span class="s2">;</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">y </span><span class="s2">= </span><span class="s1">y</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) </span><span class="s0">throws </span><span class="s1">IOException </span><span class="s2">{</span>
+        <span class="s1">BufferedReader reader </span><span class="s2">= </span><span class="s0">new </span><span class="s1">BufferedReader</span><span class="s2">(</span><span class="s0">new </span><span class="s1">InputStreamReader</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">));</span>
+        <span class="s1">PrintWriter writer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">PrintWriter</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">);</span>
+        <span class="s1">StringTokenizer tokenizer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringTokenizer</span><span class="s2">(</span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">());</span>
+
+        <span class="s0">int </span><span class="s1">n </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+        <span class="s0">int </span><span class="s1">m </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+        <span class="s0">int </span><span class="s1">e </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+
+        <span class="s1">Point</span><span class="s2">[] </span><span class="s1">basePoints </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Point</span><span class="s2">[</span><span class="s1">n</span><span class="s2">];</span>
+        <span class="s1">Point</span><span class="s2">[] </span><span class="s1">sourcePoints </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Point</span><span class="s2">[</span><span class="s1">m</span><span class="s2">];</span>
+        <span class="s0">int</span><span class="s2">[][] </span><span class="s1">segments </span><span class="s2">= </span><span class="s0">new int</span><span class="s2">[</span><span class="s1">e</span><span class="s2">][</span><span class="s3">2</span><span class="s2">];</span>
+
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">n</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">tokenizer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringTokenizer</span><span class="s2">(</span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">());</span>
+            <span class="s0">long </span><span class="s1">x </span><span class="s2">= </span><span class="s1">Long</span><span class="s2">.</span><span class="s1">parseLong</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+            <span class="s0">long </span><span class="s1">y </span><span class="s2">= </span><span class="s1">Long</span><span class="s2">.</span><span class="s1">parseLong</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+            <span class="s1">basePoints</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s0">new </span><span class="s1">Point</span><span class="s2">(</span><span class="s1">x</span><span class="s2">, </span><span class="s1">y</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">m</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">tokenizer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringTokenizer</span><span class="s2">(</span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">());</span>
+            <span class="s0">long </span><span class="s1">x </span><span class="s2">= </span><span class="s1">Long</span><span class="s2">.</span><span class="s1">parseLong</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+            <span class="s0">long </span><span class="s1">y </span><span class="s2">= </span><span class="s1">Long</span><span class="s2">.</span><span class="s1">parseLong</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">());</span>
+            <span class="s1">sourcePoints</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s0">new </span><span class="s1">Point</span><span class="s2">(</span><span class="s1">x</span><span class="s2">, </span><span class="s1">y</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">e</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+            <span class="s1">tokenizer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringTokenizer</span><span class="s2">(</span><span class="s1">reader</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">());</span>
+            <span class="s0">int </span><span class="s1">a </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">()) - </span><span class="s3">1</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">b </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">tokenizer</span><span class="s2">.</span><span class="s1">nextToken</span><span class="s2">()) - </span><span class="s3">1</span><span class="s2">;</span>
+            <span class="s1">segments</span><span class="s2">[</span><span class="s1">i</span><span class="s2">][</span><span class="s3">0</span><span class="s2">] = </span><span class="s1">a</span><span class="s2">;</span>
+            <span class="s1">segments</span><span class="s2">[</span><span class="s1">i</span><span class="s2">][</span><span class="s3">1</span><span class="s2">] = </span><span class="s1">b</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s1">StringBuilder result </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringBuilder</span><span class="s2">();</span>
+
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int</span><span class="s2">[] </span><span class="s1">segment </span><span class="s2">: </span><span class="s1">segments</span><span class="s2">) {</span>
+            <span class="s1">Point a </span><span class="s2">= </span><span class="s1">basePoints</span><span class="s2">[</span><span class="s1">segment</span><span class="s2">[</span><span class="s3">0</span><span class="s2">]];</span>
+            <span class="s1">Point b </span><span class="s2">= </span><span class="s1">basePoints</span><span class="s2">[</span><span class="s1">segment</span><span class="s2">[</span><span class="s3">1</span><span class="s2">]];</span>
+            <span class="s1">Point mid </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Point</span><span class="s2">((</span><span class="s1">a</span><span class="s2">.</span><span class="s1">x </span><span class="s2">+ </span><span class="s1">b</span><span class="s2">.</span><span class="s1">x</span><span class="s2">) / </span><span class="s3">2</span><span class="s2">, (</span><span class="s1">a</span><span class="s2">.</span><span class="s1">y </span><span class="s2">+ </span><span class="s1">b</span><span class="s2">.</span><span class="s1">y</span><span class="s2">) / </span><span class="s3">2</span><span class="s2">);</span>
+
+            <span class="s0">boolean </span><span class="s1">canDraw </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+            <span class="s0">for </span><span class="s2">(</span><span class="s1">Point source </span><span class="s2">: </span><span class="s1">sourcePoints</span><span class="s2">) {</span>
+                <span class="s0">if </span><span class="s2">(!</span><span class="s1">intersectsAnySegment</span><span class="s2">(</span><span class="s1">source</span><span class="s2">, </span><span class="s1">mid</span><span class="s2">, </span><span class="s1">basePoints</span><span class="s2">, </span><span class="s1">segments</span><span class="s2">)) {</span>
+                    <span class="s1">canDraw </span><span class="s2">= </span><span class="s0">true</span><span class="s2">;</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+            <span class="s1">result</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">canDraw </span><span class="s2">? </span><span class="s4">'1' </span><span class="s2">: </span><span class="s4">'0'</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s1">writer</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">result</span><span class="s2">);</span>
+        <span class="s1">writer</span><span class="s2">.</span><span class="s1">flush</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private static boolean </span><span class="s1">intersectsAnySegment</span><span class="s2">(</span><span class="s1">Point source</span><span class="s2">, </span><span class="s1">Point mid</span><span class="s2">, </span><span class="s1">Point</span><span class="s2">[] </span><span class="s1">basePoints</span><span class="s2">, </span><span class="s0">int</span><span class="s2">[][] </span><span class="s1">segments</span><span class="s2">) {</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s0">int</span><span class="s2">[] </span><span class="s1">segment </span><span class="s2">: </span><span class="s1">segments</span><span class="s2">) {</span>
+            <span class="s1">Point p1 </span><span class="s2">= </span><span class="s1">basePoints</span><span class="s2">[</span><span class="s1">segment</span><span class="s2">[</span><span class="s3">0</span><span class="s2">]];</span>
+            <span class="s1">Point p2 </span><span class="s2">= </span><span class="s1">basePoints</span><span class="s2">[</span><span class="s1">segment</span><span class="s2">[</span><span class="s3">1</span><span class="s2">]];</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">segmentsIntersect</span><span class="s2">(</span><span class="s1">source</span><span class="s2">, </span><span class="s1">mid</span><span class="s2">, </span><span class="s1">p1</span><span class="s2">, </span><span class="s1">p2</span><span class="s2">)) {</span>
+                <span class="s0">return true</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+        <span class="s0">return false</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private static boolean </span><span class="s1">segmentsIntersect</span><span class="s2">(</span><span class="s1">Point p1</span><span class="s2">, </span><span class="s1">Point q1</span><span class="s2">, </span><span class="s1">Point p2</span><span class="s2">, </span><span class="s1">Point q2</span><span class="s2">) {</span>
+
+        <span class="s0">return false</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
